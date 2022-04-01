@@ -3,18 +3,29 @@ import data from './data.js';
 
 
 
+function addItUp(bebop){
+    const countMap = {};
+
+    for (let cowboy of bebop) {
+
+        const frequency = cowboy.purchase_frequency;
+
+        if (countMap[frequency]) {
+
+            countMap[frequency]++;
+        } else {
+            countMap[frequency] = 1;
+        }
+
+    }
+
+    return countMap;
+}
 
 
+const countMapped = addItUp(data);
 
-
-const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-];
+const labels = Object.keys(countMapped);
 
 const dataModified = {
     labels: labels,
@@ -22,7 +33,7 @@ const dataModified = {
         label: 'My First dataset',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
+        data: Object.values(countMapped)
     }]
 };
 
