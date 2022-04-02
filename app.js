@@ -20,15 +20,10 @@ function addItUp(bebop, jazz){
 
     return countMap;
 }
-
-
+//comment
 const countMapped = addItUp(data, 'purchase_frequency');
 
-
-
 const labels = Object.keys(countMapped);
-
-
 
 const dataModified = {
     labels: labels,
