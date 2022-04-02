@@ -42,6 +42,7 @@ const config = {
     data: dataModified,
     options: {}
 };
+
 //eslint-disable-next-line
 new Chart(
     document.getElementById('myChart'),
