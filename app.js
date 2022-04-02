@@ -2,13 +2,12 @@
 import data from './data.js';
 
 
-
-function addItUp(bebop){
+function addItUp(bebop, jazz){
     const countMap = {};
 
     for (let cowboy of bebop) {
 
-        const frequency = cowboy.purchase_frequency;
+        const frequency = cowboy[jazz];
 
         if (countMap[frequency]) {
 
@@ -23,14 +22,18 @@ function addItUp(bebop){
 }
 
 
-const countMapped = addItUp(data);
+const countMapped = addItUp(data, 'purchase_frequency');
+
+
 
 const labels = Object.keys(countMapped);
+
+
 
 const dataModified = {
     labels: labels,
     datasets: [{
-        label: 'My First dataset',
+        label: 'purchase_frequency',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
         data: Object.values(countMapped)
@@ -40,12 +43,100 @@ const dataModified = {
 
 
 const config = {
-    type: 'line',
+    type: 'bar',
     data: dataModified,
     options: {}
 };
-
-const myChart = new Chart(
+//eslint-disable-next-line
+new Chart(
     document.getElementById('myChart'),
     config
 );
+//////////////
+const countMapped2 = addItUp(data, 'cool_factor');
+
+const labels2 = Object.keys(countMapped2);
+
+
+
+const dataModified2 = {
+    labels: labels2,
+    datasets: [{
+        label: 'cool_factor',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: Object.values(countMapped2)
+    }]
+};
+
+const config2 = {
+    type: 'line',
+    data: dataModified2,
+    options: {}
+};
+//eslint-disable-next-line
+new Chart(
+    document.getElementById('myChart2'),
+    config2
+);
+
+//////////////
+const countMapped3 = addItUp(data, 'gender');
+
+const labels3 = Object.keys(countMapped3);
+
+console.log(countMapped3);
+
+const dataModified3 = {
+    labels: labels3,
+    datasets: [{
+        label: 'gender',
+        backgroundColor: ['yellow', 'green', 'blue', 'purple', 'red', 'violet', 'cyan', 'orange'],
+        borderColor: 'white',
+        data: Object.values(countMapped3)
+    }]
+};
+
+
+
+const config3 = {
+    type: 'pie',
+    data: dataModified3,
+    options: {}
+};
+//eslint-disable-next-line
+new Chart(
+    document.getElementById('myChart3'),
+    config3
+);
+
+//////////////
+const countMapped4 = addItUp(data, 'gender');
+
+const labels4 = Object.keys(countMapped3);
+
+console.log(countMapped4);
+
+const dataModified4 = {
+    labels: labels4,
+    datasets: [{
+        label: 'gender',
+        backgroundColor: ['yellow', 'green', 'blue', 'purple', 'red', 'violet', 'cyan', 'orange'],
+        borderColor: 'white',
+        data: Object.values(countMapped4)
+    }]
+};
+
+
+
+const config4 = {
+    type: 'bar',
+    data: dataModified4,
+    options: {}
+};
+//eslint-disable-next-line
+new Chart(
+    document.getElementById('myChart4'),
+    config34
+);
+
