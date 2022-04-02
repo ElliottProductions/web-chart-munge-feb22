@@ -85,7 +85,7 @@ const countMapped3 = addItUp(data, 'gender');
 
 const labels3 = Object.keys(countMapped3);
 
-console.log(countMapped3);
+
 
 const dataModified3 = {
     labels: labels3,
@@ -109,34 +109,3 @@ new Chart(
     document.getElementById('myChart3'),
     config3
 );
-
-//////////////
-const countMapped4 = addItUp(data, 'gender');
-
-const labels4 = Object.keys(countMapped3);
-
-console.log(countMapped4);
-
-const dataModified4 = {
-    labels: labels4,
-    datasets: [{
-        label: 'gender',
-        backgroundColor: ['yellow', 'green', 'blue', 'purple', 'red', 'violet', 'cyan', 'orange'],
-        borderColor: 'white',
-        data: Object.values(countMapped4)
-    }]
-};
-
-
-
-const config4 = {
-    type: 'bar',
-    data: dataModified4,
-    options: {}
-};
-//eslint-disable-next-line
-new Chart(
-    document.getElementById('myChart4'),
-    config34
-);
-
